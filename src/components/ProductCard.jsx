@@ -83,20 +83,31 @@ function ProductCard({
             </button>
           )}
 
-           <button
-            className="btn btn-outline btn-error"
-            onClick={() => onDelete(product.id)}
-            disabled={deleting}
-          >
-            {deleting ? (
-              <>
-                <span className="loading loading-spinner loading-sm"></span>
-                Deleting...
-              </>
-            ) : (
-              "Delete"
-            )}
-          </button>
+         <button
+  className="btn btn-outline btn-error"
+  onClick={() => {
+    const confirmDelete = window.confirm(
+      `Are you sure you want to delete "${product.title}"?`
+    );
+
+    if (confirmDelete) {
+      onDelete(product.id);
+    }
+  }}
+  disabled={deleting}
+>
+  {deleting ? (
+    <>
+      <span className="loading loading-spinner loading-sm"></span>
+      Deleting...
+    </>
+  ) : (
+    <>
+      
+      Delete
+    </>
+  )}
+</button>
         
         </div>
 

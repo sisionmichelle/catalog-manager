@@ -186,10 +186,6 @@ function App() {
           updatingId={updatingId}
         />
       </div>
-      <div className="alert">
-  <span>No products found. Try a different search or category.</span>
- 
-</div>
 
     </div>
   </div>
