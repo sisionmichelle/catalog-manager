@@ -125,9 +125,40 @@ function App() {
     return matchesSearch && matchesCategory;
   });
 
-  if (loading) {
-    return <h2>Loading products...</h2>;
-  }
+ if (loading) {
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-base-200">
+
+      <div className="card bg-base-100 shadow-2xl border border-base-300 w-[420px]">
+
+        <div className="card-body items-center text-center py-10">
+
+          <MdInventory2
+            size={80}
+            className="text-neutral animate-bounce"
+          />
+
+          <h1 className="text-3xl font-bold mt-4">
+            Product Catalog Manager
+          </h1>
+
+          <p className="text-base-content/60 mt-2">
+            Loading products...
+          </p>
+
+          <span className="loading loading-dots loading-lg text-neutral mt-5"></span>
+
+          <progress
+            className="progress progress-neutral w-full mt-6"
+          ></progress>
+
+        </div>
+
+      </div>
+
+    </div>
+  );
+}
 
   if (error) {
     return <h2>{error}</h2>;
@@ -137,11 +168,11 @@ function App() {
   <div className="min-h-screen bg-base-200 py-10 px-4">
     <div className="max-w-7xl mx-auto">
 
-   <div className="flex justify-center my-12">
-  <div className="rounded-full border-[6px] border-black bg-base-100 px-20 py-8 shadow-xl">
-   <h1 className="flex items-center justify-center gap-3 text-5xl font-bold">
-    <MdInventory2 />
-    Product Catalog Manager
+   <div className="flex justify-center my-8">
+  <div className="rounded-full border-[6px] border-black bg-base-100 px-12 py-5 shadow-lg">
+   <h1 className="flex items-center justify-center gap-3 text-3xl md:text-4xl font-bold text-base-content">
+  <MdInventory2 size={38} />
+  <span>Product Catalog Manager</span>
 </h1>
   </div>
 </div>

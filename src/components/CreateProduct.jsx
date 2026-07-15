@@ -27,7 +27,7 @@ function CreateProduct({ categories, onCreateProduct, creating }) {
 
   return (
    
-  <form onSubmit={handleSubmit} className="space-y-4">
+  
        
         <form onSubmit={handleSubmit} className="space-y-4">
 
@@ -92,7 +92,7 @@ function CreateProduct({ categories, onCreateProduct, creating }) {
           </button>
 
         </form>
-      </form>
+    
   );
 }
 
